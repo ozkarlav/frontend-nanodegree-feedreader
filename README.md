@@ -1,4 +1,14 @@
-# Project Overview
+"Read me" - Udacity Feed Reader Testing
+--------
+
+# Quick Guide
+
+* Clone or download project from [Github](https://github.com/ozkarlav/frontend-nanodegree-feedreader)
+* Open the index.html file inside the main folder frontend-nanodegree-feedreader.
+* The testing jasmine file is jasmine/spec/feedreader.js
+
+
+## Project Overview
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
 
@@ -8,7 +18,6 @@ In this project you are given a web-based application that reads RSS feeds. The 
 Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
 
 Whether you work in an organization that uses test-driven development or in an organization that uses tests to make sure future feature development doesn't break existing features, it's an important skill to have!
-
 
 ## What will I learn?
 

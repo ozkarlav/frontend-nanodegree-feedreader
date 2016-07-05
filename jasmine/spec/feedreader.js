@@ -3,16 +3,15 @@
  * This is the spec file that Jasmine will read and contains
  * all of the tests that will be run against your application.
  */
-
 /* We're placing all of our tests within the $() function,
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
 $(function() {
     /* This is our first test suite - a test suite just contains
-    * a related set of tests. This suite is all about the RSS
-    * feeds definitions, the allFeeds variable in our application.
-    */
+     * a related set of tests. This suite is all about the RSS
+     * feeds definitions, the allFeeds variable in our application.
+     */
     describe('RSS Feeds', function() {
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
@@ -31,24 +30,24 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-        function testUrl(feed){
-            it('urls are defined', function(){
-               expect(feed).toBeDefined();
-               expect(feed).not.toBe('');
+        function testUrl(feed) {
+            it('urls are defined', function() {
+                expect(feed).toBeDefined();
+                expect(feed).not.toBe('');
             });
         };
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-        function testName(feed){
-            it('names are defined', function(){
-               expect(feed).toBeDefined();
-               expect(feed).not.toBe('');
+        function testName(feed) {
+            it('names are defined', function() {
+                expect(feed).toBeDefined();
+                expect(feed).not.toBe('');
             });
         };
 
-        for(var i = 0; i < allFeeds.length; i++) {
+        for (var i = 0; i < allFeeds.length; i++) {
             testUrl(allFeeds[i].url);
             testName(allFeeds[i].name);
         }
@@ -63,22 +62,23 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-        it('is hidden', function(){
+        it('is hidden', function() {
             expect(header.className).toBe('menu-hidden');
         });
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
-        it('changes visivility', function (){
+        /* TODO: Write a test that ensures the menu changes
+         * visibility when the menu icon is clicked. This test
+         * should have two expectations: does the menu display when
+         * clicked and does it hide when clicked again.
+         */
+        it('changes visivility', function() {
             var menuButton = $('.menu-icon-link');
-            menuButton.trigger( "click" );
+
+            menuButton.trigger("click");
             expect(header.className).toBe('');
-            menuButton.trigger( "click" );
+            menuButton.trigger("click");
             expect(header.className).toBe('menu-hidden');
         });
-        
+
     });
     /* TODO: Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
@@ -88,16 +88,17 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-        beforeEach(function(done){
-            loadFeed(0,function(){
+        beforeEach(function(done) {
+            loadFeed(0, function() {
                 done();
             });
         });
 
-         it('should contain feeds', function(){
+        it('should contain feeds', function() {
             var entry = $('.feed.entry-link');
+            
             expect(entry).toBeDefined();
-         });
+        });
     });
     /* TODO: Write a new test suite named "New Feed Selection"*/
     describe('Initial Entries', function() {
@@ -105,17 +106,17 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        beforeEach(function(done){
-            loadFeed(0,function(){
+        beforeEach(function(done) {
+            loadFeed(0, function() {
                 done();
             });
         });
-        it('should contain different feeds', function(){
+        it('should contain different feeds', function() {
             var firstEntry = $('.entry').first().html();
             var lastEntry = $('.entry').last().html();
 
             expect(firstEntry).not.toEqual(lastEntry);
-         });
+        });
     });
 
 }());
